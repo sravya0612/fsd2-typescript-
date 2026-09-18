@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        form {
+            width: 350px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid black;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 8px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1><%= title %></h1>
+
+    <% if (error) { %>
+
+        <p class="error"><%= error %></p>
+
+    <% } %>
+
+    <% if (user) { %>
+
+        <p class="success">
+            Welcome, <%= user %>!
+        </p>
+
+        <p>Your student registration has been completed successfully.</p>
+
+        <a href="/">Register Another Student</a>
+
+    <% } else { %>
+
+        <form action="/register" method="POST">
+
+            <label>Student Name:</label><br>
+            <input
+                type="text"
+                name="username"
+                placeholder="Enter your name"
+                required
+            >
+            <br><br>
+
+            <label>Email:</label><br>
+            <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+            >
+            <br><br>
+
+            <label>Age:</label><br>
+            <input
+                type="number"
+                name="age"
+                placeholder="Enter your age"
+                min="18"
+                required
+            >
+            <br><br>
+
+            <button type="submit">Submit Registration</button>
+
+        </form>
+
+    <% } %>
+
+</body>
+</html>

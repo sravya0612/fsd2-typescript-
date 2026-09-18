@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .dashboard {
+            width: 500px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid black;
+        }
+
+        .info {
+            margin: 20px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <h1>Welcome to Student Dashboard</h1>
+
+        <p class="info">
+            <strong>Student:</strong>
+            <%= username %>
+        </p>
+
+        <p class="info">
+            <strong>Session Status:</strong>
+            You are logged in using Express Session.
+        </p>
+
+        <p class="info">
+            <strong>Last Login:</strong>
+            <%= lastLogin %>
+        </p>
+
+        <hr>
+
+        <a href="/logout">Logout</a>
+
+    </div>
+
+</body>
+</html>
